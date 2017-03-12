@@ -43,7 +43,7 @@ namespace Hotel_Project
             OrderProcessingObject.confirmOrder += new OrderProcessing.OrderConfirmationEvent(Program.travelagency4.receiveConfirmation);
             OrderProcessingObject.confirmOrder += new OrderProcessing.OrderConfirmationEvent(Program.travelagency5.receiveConfirmation);
             Thread OrderProcessingThread = new Thread(new ThreadStart(OrderProcessingObject.OrderProcessing_Func));
-            
+            OrderProcessingThread.Start();
         }
 
 
