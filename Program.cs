@@ -42,6 +42,8 @@ namespace Hotel_Project
             //********Hotel Supplier functions to be run as threads**************//
             Thread hotelsupplierThread1 = new Thread(new ThreadStart(hotelsupplier1.HotelSupplier_Func));
             Thread hotelsupplierThread2 = new Thread(new ThreadStart(hotelsupplier2.HotelSupplier_Func));
+            hotelsupplierThread1.Name = "Hotel Thread 1";
+            hotelsupplierThread2.Name = "Hotel Thread 2";
             hotelsupplierThread1.Start();
             hotelsupplierThread2.Start();
             //************************************************//
@@ -52,28 +54,19 @@ namespace Hotel_Project
             Thread travelagency3thread = new Thread(new ThreadStart(travelagency3.TravelAgency_Func));
             Thread travelagency4thread = new Thread(new ThreadStart(travelagency4.TravelAgency_Func));
             Thread travelagency5thread = new Thread(new ThreadStart(travelagency5.TravelAgency_Func));
+            travelagency1thread.Name = "TA thread 1";
+            travelagency2thread.Name = "TA thread 2";
+            travelagency3thread.Name = "TA thread 3";
+            travelagency4thread.Name = "TA thread 4";
+            travelagency5thread.Name = "TA thread 5";
             travelagency1thread.Start();
             travelagency2thread.Start();
             travelagency3thread.Start();
             travelagency4thread.Start();
             travelagency5thread.Start();
             //************************************************//
-
-
-            /*
-            bo.makingOrder += new MultiCellBuffer.orderDelegate(EncoderDecoder.getOrder);
-            Thread retaierThread = new Thread(new ThreadStart(t1.retailerFunc));
-            retaierThread.Name = "R1";
-            retaierThread.Start();
-
-            Thread retaierThread1 = new Thread(new ThreadStart(t2.retailerFunc));
-            retaierThread1.Name = "R2";
-            retaierThread1.Start();
-
-
-            retaierThread.Join();
-            retaierThread1.Join();
-            */
+            
+            
             travelagency1thread.Join();
             travelagency2thread.Join();
             travelagency3thread.Join();
@@ -87,3 +80,4 @@ namespace Hotel_Project
         }
     }
 }
+
